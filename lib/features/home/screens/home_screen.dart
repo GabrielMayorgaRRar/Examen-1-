@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/Perfil/screens/profile_screen.dart';
 import 'package:flutter_application_1/features/home/models/activity.dart';
 import 'package:flutter_application_1/features/home/widgets/interactive_activity_card.dart';
 
@@ -68,8 +69,14 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                );
               },
-              // circle avatar 
+              // circle avatar
               icon: const CircleAvatar(
                 backgroundColor: Colors.white,
                 // solo le puse un icono de personita y lo puse de morado
