@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //aqui esta mi appbar
       appBar: AppBar(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
@@ -59,6 +60,24 @@ class _MyHomePageState extends State<MyHomePage> {
           "Panel de Actividad Fisica",
           style: TextStyle(fontSize: 18),
         ),
+        // boton de usuario derecha superior a
+        actions: [
+          Padding(
+            //right hace que se vaya a la derecha
+            // como esto ya esta hasta arriba pues no tendria que hacer cosas extrras
+            padding: const EdgeInsets.only(right: 16.0),
+            child: IconButton(
+              onPressed: () {
+              },
+              // circle avatar 
+              icon: const CircleAvatar(
+                backgroundColor: Colors.white,
+                // solo le puse un icono de personita y lo puse de morado
+                child: Icon(Icons.person, color: Colors.deepPurple),
+              ),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(20),
@@ -70,57 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
             return InteractiveActivityCard(activity: currentActivity);
           },
         ),
-
-        /*Column(
-            children: [
-              Text("Resumen de Hoy", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-              const ActivityCard(
-                title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,
-              ),
-
-              const ActivityCard(
-                title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,
-              ),
-              const ActivityCard(
-                title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,
-              ),
-              const ActivityCard(
-                title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,
-              ),
-              const InteractiveActivityCard( title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,),
-              const InteractiveActivityCard( title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,),
-              const InteractiveActivityCard( title: "Pasos Diarios",
-                subtitle: "Meta: 10,000 pasos",
-                trailingText: "747",
-                icon: Icons.directions_walk,
-                iconColor: Colors.deepPurple,),
-
-            ],
-          ), */
       ),
     );
   }
